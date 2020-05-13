@@ -19,6 +19,7 @@ const messages = {
 	en: messagesEn,
 };
 
+console.log(messages);
 function App() {
 	const { language } = useContext(LanguageContext);
 

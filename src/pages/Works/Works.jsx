@@ -19,8 +19,6 @@ const Works = () => {
 			</h1>
 			<br />
 			<FormattedMessage id="works.text" /> <br />
-			Sedal description:
-			<FormattedMessage id="sedal.description" />
 			<Router>
 				<div>
 					{projects.map((project, key) => (

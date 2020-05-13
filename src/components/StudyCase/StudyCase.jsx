@@ -8,16 +8,27 @@ const StudyCase = () => {
 	const [currentProject, setCurrentProject] = useState(null);
 
 	useEffect(() => {
-		setCurrentProject(projects.find((project) => project.slug === projectSlug));
+		if (projectSlug.includes("platon") === true) {
+			setCurrentProject("platon");
+		}
+		if (projectSlug.includes("solane") === true) {
+			setCurrentProject("solane");
+		}
+		if (projectSlug.includes("sedal") === true) {
+			setCurrentProject("sedal");
+		}
+		console.log("Current slug" + currentProject);
 	});
+
 	return (
 		<>
 			{currentProject ? (
 				<>
-					<h1>{currentProject.title}</h1>
-					<p>{currentProject.description}</p>
-					test:
-					<FormattedMessage id="works.title" />
+					<h6>
+						<FormattedMessage id={`${currentProject}.title`} />
+					</h6>
+					<FormattedMessage id={`${currentProject}.description`} />
+					<br />
 				</>
 			) : (
 				<h1>Paragraphe d'erreur</h1>
