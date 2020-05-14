@@ -10,7 +10,6 @@ import { IntlProvider } from "react-intl";
 import messagesFr from "./translation/fr";
 import messagesEn from "./translation/en";
 // import Work from "./components/Work";
-import StudyCase from "./components/StudyCase";
 import LanguageContext from "./context/LanguageContext";
 import React, { useContext } from "react";
 
@@ -49,6 +48,6 @@ export default App;
 
 {
 	/* <Route path={`/works/:projectSlug`}>
-							<StudyCase />
-						</Route> */
+<Works />
+</Route> */
 }
