@@ -5,15 +5,12 @@ import About from "./pages/About";
 import Works from "./pages/Works/";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import React, { useState } from "react";
 import { IntlProvider } from "react-intl";
 import messagesFr from "./translation/fr";
 import messagesEn from "./translation/en";
-// import Work from "./components/Work";
 import LanguageContext from "./context/LanguageContext";
 import React, { useContext } from "react";
 import StudyCase from "./components/StudyCase";
-import Work from "./components/Work";
 
 const messages = {
 	fr: messagesFr,

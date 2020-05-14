@@ -12,19 +12,6 @@ const StudyCase = () => {
 		setCurrentProject(projects.find((project) => project.slug === projectSlug));
 	});
 
-	// useEffect(() => {
-	// 	if (projectSlug.includes("platon") === true) {
-	// 		setCurrentProject("platon");
-	// 	}
-	// 	if (projectSlug.includes("solane") === true) {
-	// 		setCurrentProject("solane");
-	// 	}
-	// 	if (projectSlug.includes("sedal") === true) {
-	// 		setCurrentProject("sedal");
-	// 	}
-	// 	console.log("Current slug" + currentProject);
-	// });
-
 	return (
 		<>
 			{currentProject ? (
@@ -32,16 +19,26 @@ const StudyCase = () => {
 					<h6>
 						<FormattedMessage id={`${currentProject.client}.title`} />
 					</h6>
-					{/* <h6>
-						<FormattedMessage id={`${currentProject}.title`} />
-					</h6> */}
 					<FormattedMessage id={`${currentProject.client}.description`} />
 					<br />
 				</>
 			) : (
-				<h1>Paragraphe d'erreur</h1>
+				<h1>Cette case study n'éxiste pas..</h1>
 			)}
 		</>
 	);
 };
 export default StudyCase;
+
+// useEffect(() => {
+// 	if (projectSlug.includes("platon") === true) {
+// 		setCurrentProject("platon");
+// 	}
+// 	if (projectSlug.includes("solane") === true) {
+// 		setCurrentProject("solane");
+// 	}
+// 	if (projectSlug.includes("sedal") === true) {
+// 		setCurrentProject("sedal");
+// 	}
+// 	console.log("Current slug" + currentProject);
+// });
