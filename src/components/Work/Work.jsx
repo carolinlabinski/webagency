@@ -1,32 +1,27 @@
-// //import React from "react";
-// import projects from "../../data/projects";
-// import React, { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
+import { Link } from "react-router-dom";
+import projects from "../../data/projects";
+import React, { useState } from "react";
 
-// // const Book = () => {
-// // 	let { bookSlug } = useParams();
-// // 	console.log(bookSlug);
-// // 	return <p>{bookSlug}</p>;
-// // };
-// // export default Book;
+const Work = () => {
+	const [selectedProject, setselectedProject] = useState("");
 
-// const Work = () => {
-// 	let { projectSlug } = useParams();
-// 	const [currentProject, setCurrentProject] = useState(null);
-// 	useEffect(() => {
-// 		setCurrentProject(projects.find((project) => project.slug === projectSlug));
-// 	});
-// 	return (
-// 		<>
-// 			{currentProject ? (
-// 				<>
-// 					<h1>{currentProject.title}</h1>
-// 					<p>{currentProject.description}</p>
-// 				</>
-// 			) : (
-// 				<h1>Paragraphe d'erreur</h1>
-// 			)}
-// 		</>
-// 	);
-// };
-// export default Work;
+	return (
+		<>
+			<h1>
+				<FormattedMessage id="works.title" />
+			</h1>
+			<br />
+			<FormattedMessage id="works.text" /> <br />
+			<div>
+				{projects.map((project, key) => (
+					<div key={key}>
+						{/* <h6>{project.title}</h6> */}
+						<Link to={`/works/${project.slug}`}>{project.client}</Link>
+					</div>
+				))}
+			</div>
+		</>
+	);
+};
+export default Work;

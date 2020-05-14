@@ -12,6 +12,8 @@ import messagesEn from "./translation/en";
 // import Work from "./components/Work";
 import LanguageContext from "./context/LanguageContext";
 import React, { useContext } from "react";
+import StudyCase from "./components/StudyCase";
+import Work from "./components/Work";
 
 const messages = {
 	fr: messagesFr,
@@ -31,8 +33,11 @@ function App() {
 						<Route path="/about">
 							<About />
 						</Route>
-						<Route path="/works">
+						<Route exact path="/works">
 							<Works />
+						</Route>
+						<Route path="/works/:projectSlug">
+							<StudyCase />
 						</Route>
 						<Route exact path="/">
 							<Home />
@@ -45,9 +50,3 @@ function App() {
 }
 
 export default App;
-
-{
-	/* <Route path={`/works/:projectSlug`}>
-<Works />
-</Route> */
-}

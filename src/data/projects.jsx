@@ -21,6 +21,14 @@ const projects = [
 		description:
 			"Malgré nos conseils et notre site web créé sur Wix, Sedal reste semble ne pas vouloir décoller. Mais comme un grand homme et une grande femme l'ont dit, les derniers seront les premiers.",
 	},
+	{
+		slug: "caro-study-case",
+		client: "caro",
+		title:
+			"caro, l'entreprise qui a commencé tout en bas. Et qui est toujours tout en bas",
+		description:
+			"Malgré nos conseils et notre site web créé sur Wix, Sedal reste semble ne pas vouloir décoller. Mais comme un grand homme et une grande femme l'ont dit, les derniers seront les premiers.",
+	},
 ];
 
 export default projects;

@@ -1,9 +1,10 @@
-import { FormattedMessage } from "react-intl";
+import { injectIntl, FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 import projects from "../../data/projects";
 import StudyCase from "../../components/StudyCase";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React, { useState } from "react";
+import Work from "../../components/Work";
 
 const Works = () => {
 	// const xx = projects.map((project, key) => (
@@ -26,17 +27,19 @@ const Works = () => {
 			</h1>
 			<br />
 			<FormattedMessage id="works.text" /> <br />
-			<Router>
-				<div>
-					{projects.map((project, key) => (
-						<div key={key}>
-							{/* <h6>{project.title}</h6> */}
-							<Link to={`/works/${project.slug}`}>{project.client}</Link>
-						</div>
-					))}
-				</div>
-				---------------
-				{/* <div>
+			{/* <Router> */}
+			<div>
+				{projects.map((project, key) => (
+					<div key={key}>
+						{/* <h6>{project.title}</h6> */}
+						<FormattedMessage id={`${project.client}.title`} /> <br />
+						{/* <FormattedMessage id="platon.title" /> <br /> */}
+						<Link to={`/works/${project.slug}`}>{project.client}</Link>
+					</div>
+				))}
+			</div>
+			---------------
+			{/* <div>
 					<h6>test link</h6>
 					<p>Discover our clients:</p>
 					<Link to={`/works/${selectedProject}-study-case`}>
@@ -44,8 +47,8 @@ const Works = () => {
 						<FormattedMessage id={`${selectedProject}.description`} />
 					</Link>
 				</div> */}
-				---------------
-				{/* <div>
+			---------------
+			{/* <div>
 					Discover our clients:
 					<h6>test link2</h6>
 					<button id="platon" onClick={handleChange}>
@@ -59,12 +62,13 @@ const Works = () => {
 					</button>
 					<br />
 				</div> */}
-				<Switch>
+			{/* <Switch>
 					<Route path={`/works/:projectSlug`}>
 						<StudyCase />
-					</Route>
-				</Switch>
-			</Router>
+						{/* <Work /> */}
+			{/* </Route> */}
+			{/* </Switch> */}
+			{/* </Router>  */}
 		</>
 	);
 };

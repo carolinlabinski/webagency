@@ -16,7 +16,13 @@ const Navbar = ({ language }) => {
 			<Link to="/about">About</Link>
 			<Link to="/works">Works</Link>
 			<button className="btn" onClick={toggle}>
-				<img src={src} style={{ height: "20px", right: "400px" }} alt="Logo" />;
+				<img
+					src={src}
+					className="m-0"
+					style={{ height: "20px", right: "400px" }}
+					alt="Logo"
+				/>
+				;
 			</button>
 		</div>
 	);
