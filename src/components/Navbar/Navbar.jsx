@@ -3,6 +3,7 @@ import flaggb from "../../img/flaggb.jpg";
 import flagfr from "../../img/flagfr.jpg";
 import React, { useContext, useState, useEffect } from "react";
 import LanguageContext from "../../context/LanguageContext";
+import { FormattedMessage } from "react-intl";
 
 const Navbar = ({ language }) => {
 	const { toggle } = useContext(LanguageContext);
