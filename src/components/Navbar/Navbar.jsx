@@ -12,6 +12,7 @@ const Navbar = ({ language }) => {
 
 	return (
 		<div className="topnav">
+			<Link to="/">SIMPLE WEBBAGENCY</Link>
 			<Link to="/">Home</Link>
 			<Link to="/about">About</Link>
 			<Link to="/works">Works</Link>

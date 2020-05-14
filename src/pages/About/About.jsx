@@ -19,11 +19,13 @@ import { FormattedMessage } from "react-intl";
 const About = ({ modify }) => {
 	return (
 		<>
-			<h1>
-				<FormattedMessage id="about.title" />
-			</h1>
-			<br />
-			<FormattedMessage id="about.text" /> <br />
+			<div className="container mt-5">
+				<h1>
+					<FormattedMessage id="about.title" />
+				</h1>
+				<br />
+				<FormattedMessage id="about.text" /> <br />
+			</div>
 		</>
 	);
 };

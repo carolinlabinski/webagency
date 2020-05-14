@@ -11,6 +11,7 @@ import messagesEn from "./translation/en";
 import LanguageContext from "./context/LanguageContext";
 import React, { useContext } from "react";
 import StudyCase from "./components/StudyCase";
+import { FormattedMessage } from "react-intl";
 
 const messages = {
 	fr: messagesFr,

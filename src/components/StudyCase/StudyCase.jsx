@@ -16,11 +16,24 @@ const StudyCase = () => {
 		<>
 			{currentProject ? (
 				<>
-					<h6>
-						<FormattedMessage id={`${currentProject.client}.title`} />
-					</h6>
-					<FormattedMessage id={`${currentProject.client}.description`} />
-					<br />
+					<div className="container mt-5">
+						<div className="card">
+							<div className="card-header">
+								<FormattedMessage id={currentProject.client.toUpperCase()} />
+							</div>
+							<div className="card-body">
+								<h5 className="card-title">
+									<FormattedMessage id={`${currentProject.client}.title`} />
+								</h5>
+								<p className="card-text">
+									<FormattedMessage id={`${currentProject.client}.description`} />
+								</p>
+								<a href="/works" className="btn btn-primary">
+									Retour à la page works
+								</a>
+							</div>
+						</div>
+					</div>
 				</>
 			) : (
 				<h1>Cette case study n'éxiste pas..</h1>
