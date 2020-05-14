@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import projects from "../../data/projects";
+import { Link } from "react-router-dom";
 
 const StudyCase = () => {
 	let { projectSlug } = useParams();
@@ -28,9 +29,10 @@ const StudyCase = () => {
 								<p className="card-text">
 									<FormattedMessage id={`${currentProject.client}.description`} />
 								</p>
-								<a href="/works" className="btn btn-primary">
+
+								<Link className="btn btn-primary" to="/works">
 									Retour à la page works
-								</a>
+								</Link>
 							</div>
 						</div>
 					</div>
