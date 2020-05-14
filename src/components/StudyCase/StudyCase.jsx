@@ -29,10 +29,6 @@ const StudyCase = () => {
 								<p className="card-text">
 									<FormattedMessage id={`${currentProject.client}.description`} />
 								</p>
-
-								<Link className="btn btn-primary" to="/works">
-									Retour à la page works
-								</Link>
 							</div>
 						</div>
 					</div>
