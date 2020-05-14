@@ -1,5 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.js";
+import $ from "jquery";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Works from "./pages/Works/";

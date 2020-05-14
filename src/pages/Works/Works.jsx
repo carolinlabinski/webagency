@@ -18,26 +18,21 @@ const Works = () => {
 			<div>
 				{projects.map((project, key) => (
 					<div className="section">
-						<div className="container-1">
+						<div className="container">
 							<div className="row">
-								<div className="mt-1 ml-5 mr-5">
-									<div className="col-md-12 text-center">
-										<br />
-										<div
-											className="card text-center"
-											style={{ width: "18rem", height: "10rem" }}
-										>
-											<div className="card-body">
-												<div key={key}>
-													<h5 className="card-title">
-														<FormattedMessage id={`${project.client}.title`} />
-													</h5>
-													<button className="btn btn-outline-primary" id="btn-cards">
-														<Link to={`/works/${project.slug}`}>
-															{project.client.toUpperCase()}
-														</Link>
-													</button>
-												</div>
+								<div className="mt-1 ml-3">
+									<br />
+									<div className="card mb-1" style={{ width: "18rem", height: "10rem" }}>
+										<div className="card-body">
+											<div key={key}>
+												<h5 className="card-title">
+													<FormattedMessage id={`${project.client}.title`} />
+												</h5>
+												<button className="btn btn-outline-primary" id="btn-cards">
+													<Link to={`/works/${project.slug}`}>
+														{project.client.toUpperCase()}
+													</Link>
+												</button>
 											</div>
 										</div>
 									</div>
