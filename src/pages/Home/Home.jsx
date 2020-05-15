@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { FormattedMessage } from "react-intl";
+import { useHistory } from "react-router-dom";
+import LanguageContext from "../../context/LanguageContext";
 
 const Home = () => {
+	const history = useHistory();
+	const { language } = useContext(LanguageContext);
+
+	useEffect(() => {
+		history.push(`/${language}`);
+	}, [language]);
+
 	return (
 		<>
 			<div className="container mt-5">

@@ -3,14 +3,15 @@ import flaggb from "../../img/flaggb.jpg";
 import flagfr from "../../img/flagfr.jpg";
 import React, { useContext, useState, useEffect } from "react";
 import LanguageContext from "../../context/LanguageContext";
-import { FormattedMessage } from "react-intl";
 import projects from "../../data/projects";
 
-const Navbar = ({ language }) => {
-	const { toggle } = useContext(LanguageContext);
+const Navbar = () => {
+	const { toggle, language } = useContext(LanguageContext);
 	const [src, setSrc] = useState(flagfr);
 
-	useEffect(() => (language === "fr" ? setSrc(flaggb) : setSrc(flagfr)));
+	useEffect(() => {
+		language === "fr" ? setSrc(flaggb) : setSrc(flagfr);
+	}, [language]);
 
 	let projectsList = projects.map((project, key) => (
 		<div key={key}>
@@ -36,7 +37,10 @@ const Navbar = ({ language }) => {
 			>
 				<span className="navbar-toggler-icon"></span>
 			</button>
-			<div className="collapse navbar-collapse" id="navbarSupportedContent">
+			<div
+				className="collapse navbar-collapse"
+				id="navbarSupportedContent"
+			>
 				<ul className="navbar-nav mr-auto">
 					<li className="nav-item active">
 						<Link className="nav-link" id="whitetext" to="/">
@@ -61,23 +65,28 @@ const Navbar = ({ language }) => {
 						>
 							Works
 						</Link>
-						<div className="dropdown-menu" aria-labelledby="navbarDropdown">
+						<div
+							className="dropdown-menu"
+							aria-labelledby="navbarDropdown"
+						>
 							<Link className="nav-link" to="/works">
 								Case studies
 							</Link>
-							<div className="dropdown-divider" id="redtext"></div>
+							<div
+								className="dropdown-divider"
+								id="redtext"
+							></div>
 							{projectsList}
 						</div>
 					</li>
 				</ul>
-				<button className="btn" onClick={toggle}>
-					<img
-						src={src}
-						className="m-0"
-						style={{ height: "20px", right: "400px" }}
-						alt="Logo"
-					/>
-				</button>
+				<img
+					src={src}
+					className="m-0"
+					style={{ height: "20px", right: "400px" }}
+					alt="Logo"
+					onClick={toggle}
+				/>
 			</div>
 		</nav>
 	);

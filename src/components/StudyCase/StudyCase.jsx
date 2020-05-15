@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import projects from "../../data/projects";
-import { Link } from "react-router-dom";
 
 const StudyCase = () => {
 	let { projectSlug } = useParams();
@@ -10,8 +9,10 @@ const StudyCase = () => {
 	const [currentProject, setCurrentProject] = useState(null);
 
 	useEffect(() => {
-		setCurrentProject(projects.find((project) => project.slug === projectSlug));
-	});
+		setCurrentProject(
+			projects.find((project) => project.slug === projectSlug)
+		);
+	}, [projectSlug]);
 
 	return (
 		<>
@@ -20,14 +21,20 @@ const StudyCase = () => {
 					<div className="container mt-5">
 						<div className="card">
 							<div className="card-header">
-								<FormattedMessage id={currentProject.client.toUpperCase()} />
+								<FormattedMessage
+									id={currentProject.client.toUpperCase()}
+								/>
 							</div>
 							<div className="card-body">
 								<h5 className="card-title">
-									<FormattedMessage id={`${currentProject.client}.title`} />
+									<FormattedMessage
+										id={`${currentProject.client}.title`}
+									/>
 								</h5>
 								<p className="card-text">
-									<FormattedMessage id={`${currentProject.client}.description`} />
+									<FormattedMessage
+										id={`${currentProject.client}.description`}
+									/>
 								</p>
 							</div>
 						</div>

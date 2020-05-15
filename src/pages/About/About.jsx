@@ -16,7 +16,7 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
 
-const About = ({ modify }) => {
+const About = () => {
 	return (
 		<>
 			<div className="container mt-5">

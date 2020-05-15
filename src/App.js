@@ -1,26 +1,25 @@
+import React, { useContext } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
-import $ from "jquery";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Works from "./pages/Works/";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { IntlProvider } from "react-intl";
-import messagesFr from "./translation/fr";
-import messagesEn from "./translation/en";
+import fr from "./translation/fr";
+import en from "./translation/en";
 import LanguageContext from "./context/LanguageContext";
-import React, { useContext } from "react";
 import StudyCase from "./components/StudyCase";
 
 const messages = {
-	fr: messagesFr,
-	en: messagesEn,
+	fr,
+	en,
 };
 
 console.log(messages);
-function App() {
+const App = () => {
 	const { language } = useContext(LanguageContext);
 
 	return (
@@ -29,16 +28,13 @@ function App() {
 				<div className="App">
 					<Navbar language={language} />
 					<Switch>
-						<Route path="/about">
-							<About />
-						</Route>
-						<Route exact path="/works">
-							<Works />
-						</Route>
+						<Route path="/about" component={About} />
+						<Route exact path="/works" component={Works} />
 						<Route path="/works/:projectSlug">
 							<StudyCase />
 						</Route>
-						<Route exact path="/">
+
+						<Route path="/">
 							<Home />
 						</Route>
 					</Switch>
@@ -46,6 +42,6 @@ function App() {
 			</Router>
 		</IntlProvider>
 	);
-}
+};
 
 export default App;
